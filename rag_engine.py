@@ -8,7 +8,8 @@ from typing import List, Dict
 from bs4 import BeautifulSoup
 
 # Load env
-AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
+#AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
+AIPROXY_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjI0ZHMxMDAwMDkwQGRzLnN0dWR5LmlpdG0uYWMuaW4ifQ.KQrHjqysfOPIAYpcJJlCJZcZelUrpmDfFfdbcZsPIQg"
 EMBEDDING_ENDPOINT = "https://aiproxy.sanand.workers.dev/openai/v1/embeddings"
 LLM_ENDPOINT = "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions"
 
