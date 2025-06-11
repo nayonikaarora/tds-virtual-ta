@@ -57,10 +57,10 @@ def generate_answer_with_context(question: str, context_chunks: List[str]) -> Di
     response = requests.post(LLM_ENDPOINT, headers=headers, json=payload)
     response.raise_for_status()
     answer = response.json()["choices"][0]["message"]["content"]
-return {
-    "answer": answer,
-    "links": [{"url": "https://example.com", "text": "example snippet"}]
-}
+    return {
+        "answer": answer,
+        "links": [{"url": "https://example.com", "text": "example snippet"}]
+            }
 
 
 def answer_question(question: str) -> Dict:
