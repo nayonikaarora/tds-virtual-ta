@@ -1,23 +1,19 @@
-from fastapi import FastAPI, Request
+# main.py
+from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
-import base64
-import os
-
-# Import your functions
-from rag_engine import answer_question  # update this if you named it differently
+from rag_engine import answer_question
 
 app = FastAPI()
 
 class QueryPayload(BaseModel):
     question: str
-    image: Optional[str] = None  # base64 image, if any
+    image: Optional[str] = None
 
 @app.post("/api/")
 async def get_answer(payload: QueryPayload):
     try:
-        response = answer_question(payload.question)
+        response = answer_question(payload.question, payload.image)
         return response
     except Exception as e:
         return {"error": str(e)}
-
